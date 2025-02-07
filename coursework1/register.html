@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App - Register</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/dark-mode.css" id="theme-style">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Notes App</h1>
+      <nav class="nav-links">
+        <a href="index.html" class="btn btn-secondary">Home</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content container">
+    <section class="auth-section">
+      <h2>Register</h2>
+      <form id="register-form" class="auth-form" method="POST" action="backend/auth.php">
+        <!-- Hidden Action Field -->
+        <input type="hidden" name="action" value="register">
+        
+        <!-- Hidden CSRF Token Field -->
+        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? ''; ?>">
+        
+        <!-- Username Input -->
+        <input type="text" id="register-username" name="username" placeholder="Username" required>
+        
+        <!-- Email Input -->
+        <input type="email" id="register-email" name="email" placeholder="Email" required>
+        
+        <!-- Password Input -->
+        <input type="password" id="register-password" name="password" placeholder="Password" required>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <p class="auth-footer">Already have an account? <a href="login.html">Login</a></p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Notes App. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/auth.js"></script>
+</body>
+</html>

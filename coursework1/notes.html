@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App - Notes</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/dark-mode.css" id="theme-style">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Notes App</h1>
+      <nav class="nav-links">
+        <button id="toggle-theme" class="btn btn-icon">🌙</button>
+        <a href="login.html" class="btn btn-secondary">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <section class="notes-section">
+      <h2 class="section-title">Your Notes</h2>
+      <form id="note-form" class="note-form">
+        <input type="text" id="note-title" placeholder="Note Title" required>
+        <textarea id="note-content" placeholder="Note Content" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary">Add Note</button>
+      </form>
+
+      <div id="notes-list" class="notes-grid">
+        <!-- Notes will be dynamically added here -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Notes App. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/notes.js"></script>
+</body>
+</html>

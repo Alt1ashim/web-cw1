@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App - Login</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/dark-mode.css" id="theme-style">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Notes App</h1>
+      <nav class="nav-links">
+        <a href="index.html" class="btn btn-secondary">Home</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content container">
+    <section class="auth-section">
+      <h2>Login</h2>
+      <form id="login-form" class="auth-form" method="POST" action="backend/auth.php">
+        <!-- Hidden Action Field -->
+        <input type="hidden" name="action" value="login">
+        
+        <!-- Hidden CSRF Token Field -->
+        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? ''; ?>">
+        
+        <!-- Email Input -->
+        <input type="email" id="login-email" name="email" placeholder="Email" required>
+        
+        <!-- Password Input -->
+        <input type="password" id="login-password" name="password" placeholder="Password" required>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p class="auth-footer">Don't have an account? <a href="register.html">Sign Up</a></p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Notes App. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/auth.js"></script>
+</body>
+</html>
